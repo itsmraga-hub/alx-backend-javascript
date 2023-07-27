@@ -12,14 +12,6 @@ export default class Airport {
     return this._name;
   }
 
-  customStringRepresentation() {
-    return `Airport [${this.code}] { _name: '${this.name}', _code: '${this.code}'}`;
-  }
-
-  toString() {
-    return `[Object ${this.code}]`;
-  }
-
   get [Symbol.toStringTag]() {
     return `${this.code}`;
   }
