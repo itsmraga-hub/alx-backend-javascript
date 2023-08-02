@@ -23,7 +23,18 @@ const printTeacher = (firstName: string, lastName: string): string => {
 }
 
 
-class StudentClass {
+interface StudentClassConstructorInterface {
+  new (firstName: string, lastName: string): StudentClassInterface
+}
+
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+
+class StudentClass implements StudentClassInterface {
   _firstName: string;
   _lastName: string;
 
