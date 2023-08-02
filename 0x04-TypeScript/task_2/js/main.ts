@@ -54,5 +54,16 @@ const isDirector = (employee: (Director | Teacher)): boolean => {
   return employee instanceof Director
 }
 
-// console.log(isDirector(createEmployee(200)))
-// console.log(isDirector(createEmployee(1000)))
+
+type Subjects = "Math" | "History";
+
+
+const teachClass = (todayClass: Subjects): string => {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else if (todayClass === "History") {
+    return "Teaching History";
+  }
+}
+
+
