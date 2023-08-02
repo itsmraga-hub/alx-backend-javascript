@@ -49,6 +49,10 @@ const createEmployee = (salary: (number | string)): (Director | Teacher) => {
   return new Director();
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+
+const isDirector = (employee: (Director | Teacher)): boolean => {
+  return employee instanceof Director
+}
+
+// console.log(isDirector(createEmployee(200)))
+// console.log(isDirector(createEmployee(1000)))
