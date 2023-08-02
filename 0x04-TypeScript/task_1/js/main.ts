@@ -32,9 +32,9 @@ class StudentClass {
     this._lastName = lastName;
   }
 
-  // workOnHomework = (): string => {
-  //   return 'Currently working';
-  // };
+  workOnHomework = (): string => {
+    return 'Currently working';
+  };
 
   // displayName = (): string => {
   //   return this._firstName;
