@@ -36,9 +36,9 @@ class StudentClass {
     return 'Currently working';
   };
 
-  // displayName = (): string => {
-  //   return this._firstName;
-  // }
+  displayName = (): string => {
+    return this._firstName;
+  }
 }
 
 // const director1: Directors = {
