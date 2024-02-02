@@ -29,7 +29,8 @@ class StudentsController {
         };
 
         for (const [field, group] of Object.entries(studentGroups).sort(cmpFxn)) {
-          responseParts.push([
+          responseParts
+          .push([
             `Number of students in ${field}: ${group.length}.`,
             'List:',
             group.map((student) => student.firstname).join(', '),
@@ -54,11 +55,12 @@ class StudentsController {
     }
     readDatabase(dataPath)
       .then((studentGroups) => {
-        let responseText = '';
+        let responseText = "";
 
         if (Object.keys(studentGroups).includes(major)) {
           const group = studentGroups[major];
-          responseText = `List: ${group.map((student) => student.firstname).join(', ')}`;
+          responseText = `List: ${group.map((student) => student.firstname)
+            .join(", ")}`;
         }
         response.status(200).send(responseText);
       })
