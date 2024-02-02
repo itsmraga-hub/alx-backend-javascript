@@ -1,14 +1,7 @@
 import readDatabase from '../utils';
 
-/**
- * The list of supported majors.
- */
 const VALID_MAJORS = ['CS', 'SWE'];
 
-/**
- * Contains the student-related route handlers.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
- */
 class StudentsController {
   static getAllStudents(request, response) {
     const dataPath = process.argv.length > 2 ? process.argv[2] : '';
@@ -33,7 +26,7 @@ class StudentsController {
           .push([
             `Number of students in ${field}: ${group.length}.`,
             'List:',
-            group.map((student) => student.firstname).join(', '),
+            group.map((student) => student.firstname).join(", "),
           ].join(' '));
         }
         response.status(200).send(responseParts.join('\n'));
@@ -46,11 +39,11 @@ class StudentsController {
   }
 
   static getAllStudentsByMajor(request, response) {
-    const dataPath = process.argv.length > 2 ? process.argv[2] : '';
+    const dataPath = process.argv.length > 2 ? process.argv[2] : "";
     const { major } = request.params;
 
     if (!VALID_MAJORS.includes(major)) {
-      response.status(500).send('Major parameter must be CS or SWE');
+      response.status(500).send(`Major parameter must be ${VALID_MAJORS[0]} or ${VALID_MAJORS[1]}`);
       return;
     }
     readDatabase(dataPath)
